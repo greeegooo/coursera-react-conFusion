@@ -1,49 +1,37 @@
 import React, { Component } from 'react';
 import { Card, CardImg, CardImgOverlay, CardTitle } from 'reactstrap';
-import Dishdetail from './DishdetailComponent';
 
 export default class Menu extends Component {
 
-    constructor(props) {
-        super(props);
+    renderDish(dish){
 
-        this.state = {
-            selectedDish: null
-        }
-    }
+        let view = (<div></div>);
 
-    onDishSelect(dish) {
-        this.setState({selectedDish: dish});
-    }
-
-    renderDish(dish) {
-        if(dish != null) {
-            return(<Dishdetail selectedDish={dish}></Dishdetail>);
-        }
-        else {
-            return (<div></div>);
-        }
-    }
-
-    render() {
-
-        const menu = this.props.dishes.map(dish => {
-            return (
+        if(dish){
+            view = (
                 <div key={dish.id} className="col-12 col-md-5 m-1">
-                    <Card onClick={() => this.onDishSelect(dish)}>
+                    <Card onClick={() => this.props.onClick(dish.id)}>
                         <CardImg width="100%" src={dish.image} alt={dish.name} />
                         <CardImgOverlay>
                             <CardTitle >{dish.name}</CardTitle>
                         </CardImgOverlay>
                     </Card>
                 </div>
-            )
-        }); 
+            );
+        }
+
+        return view;
+    }
+
+    renderMenu = (dishes) => dishes ? dishes.map(dish => this.renderDish(dish)) : (<div></div>);
+
+    render() {
 
         return (
             <div className="container">
-                <div className="row"> {menu} </div>
-                {this.renderDish(this.state.selectedDish)}
+                <div className="row"> 
+                    {this.renderMenu(this.props.dishes)} 
+                </div>
             </div>
         );
     }
