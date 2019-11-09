@@ -1,5 +1,6 @@
 import React from 'react';
-import { Card, CardImg, CardText, CardBody, CardTitle } from 'reactstrap';
+import { Card, CardImg, CardText, CardBody, CardTitle, Breadcrumb, BreadcrumbItem } from 'reactstrap';
+import { Link } from 'react-router-dom';
 
 function formatDate(dateString) {
     return new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: '2-digit'}).format(new Date(Date.parse(dateString)));
@@ -24,16 +25,16 @@ function RenderDish({dish}){
     return view;
 }
 
-function RenderComments({dish}){
+function RenderComments({comments}){
 
     let view = (<div></div>);
 
-    if(dish && dish.comments){
+    if(comments){
         view = (
             <div>
                 <h4>Comments</h4>
                 <ul className="list-unstyled">
-                    {dish.comments.map(c => {
+                    {comments.map(c => {
                         return(
                             <li key={c.id}>
                                 <p>{c.comment}</p>
@@ -53,7 +54,21 @@ const Dishdetail = (props) => {
 
     return (
         <div className="container">
+            
+            <div className="row">
 
+                <Breadcrumb>
+                    <BreadcrumbItem><Link to="/menu">Menu</Link></BreadcrumbItem>
+                    <BreadcrumbItem active>{props.dish.name}</BreadcrumbItem>
+                </Breadcrumb>
+
+                <div className="col-12">
+                    <h3>{props.dish.name}</h3>
+                    <hr />
+                </div>   
+                             
+            </div>
+            
             <div className="row">
 
                 <div className="col-12 col-md-5 m-1">
@@ -61,7 +76,7 @@ const Dishdetail = (props) => {
                 </div>
 
                 <div className="col-12 col-md-5 m-1">
-                    <RenderComments dish={props.dish} />
+                    <RenderComments comments={props.comments} />
                 </div>
 
             </div>
