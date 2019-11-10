@@ -3,10 +3,11 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 import Home from './HomeComponent';
 import Menu from './MenuComponent';
 import Dishdetail from './DishdetailComponent';
-import { DISHES } from '../shared/dishes';
+import About from './AboutComponent';
 import Header from './HeaderComponent';
 import Footer from './FooterComponent';
 import Contact from './ContactComponent';
+import { DISHES } from '../shared/dishes';
 import { COMMENTS } from '../shared/comments';
 import { PROMOTIONS } from '../shared/promotions';
 import { LEADERS } from '../shared/leaders';
@@ -50,14 +51,18 @@ export default class Main extends Component {
       );
     };
 
+    const MenuPage = () => (<Menu dishes={this.state.dishes} />);
+    const AboutPage = () => <About leaders={this.state.leaders} />;
+
     return (
       <div>
         <Header />
         <Switch>
             <Route path='/home' component={HomePage} />
-            <Route exact path='/menu' component={() => <Menu dishes={this.state.dishes} />} />
+            <Route exact path='/menu' component={MenuPage} />
             <Route path='/menu/:dishId' component={DishWithId} />
-            <Route exact path='/contactus' component={Contact} />} />
+            <Route exact path='/contactus' component={Contact} />
+            <Route exact path='/aboutus' component={AboutPage} />
             <Redirect to="/home" />
         </Switch>
         <Footer />
