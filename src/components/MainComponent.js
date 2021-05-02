@@ -8,7 +8,7 @@ import About from './AboutComponent';
 import Header from './HeaderComponent';
 import Footer from './FooterComponent';
 import Contact from './ContactComponent';
-import { addComment, fetchDishes, fetchComments, fetchPromos } from '../redux/ActionCreators';
+import { postComment, fetchDishes, fetchComments, fetchPromos } from '../redux/ActionCreators';
 import { actions } from 'react-redux-form';
 
 const mapStateToProps = state => {
@@ -31,7 +31,10 @@ const mapDispatchToProps = (dispatch) => ({
 
   fetchComments: () => dispatch(fetchComments()),
 
-  fetchPromos: () => dispatch(fetchPromos())
+  fetchPromos: () => dispatch(fetchPromos()),
+
+  postComment: (dishId, rating, author, comment) =>
+    dispatch(postComment(dishId, rating, author, comment))
 
 });
 
@@ -57,7 +60,7 @@ class Main extends Component {
           dish={this.selectedDish(dishId)} 
           comments={this.selectedDishComments(dishId)} 
           commentsErrMess={this.props.comments.errMess}
-          addComment={this.props.addComment}
+          postComment={this.props.postComment}
           isLoading={this.props.dishes.isLoading}
           errMess={this.props.dishes.errMess}
         />

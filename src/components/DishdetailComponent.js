@@ -35,7 +35,7 @@ const CommentForm = (props) => {
         setModal(!modal);
     };
     const submit = (values) => {
-        props.addComment(props.dishId, values.rating, values.author, values.comment);
+        props.postComment(props.dishId, values.rating, values.author, values.comment);
         setModal(!modal);
         
     }
@@ -128,7 +128,7 @@ const CommentForm = (props) => {
     );
 }
 
-function RenderComments({comments, addComment, dishId}){
+function RenderComments({comments, postComment, dishId}){
 
     let view = (<div></div>);
 
@@ -148,7 +148,7 @@ function RenderComments({comments, addComment, dishId}){
                 </ul>
                 <CommentForm 
                     dishId={dishId} 
-                    addComment={addComment}
+                    postComment={postComment}
                 />
             </div>
         )
@@ -204,7 +204,7 @@ const Dishdetail = (props) => {
                     <div className="col-12 col-md-5 m-1">
                         <RenderComments 
                             comments={props.comments} 
-                            addComment={props.addComment}
+                            postComment={props.postComment}
                             dishId={props.dish.id}
                         />
                     </div>
