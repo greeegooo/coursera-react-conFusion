@@ -22,8 +22,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = (dispatch) => ({
 
-  addComment: (dishId, rating, author, comment) => 
-    dispatch(addComment(dishId, rating, author, comment)),
+  postComment: (dishId, rating, author, comment) =>
+    dispatch(postComment(dishId, rating, author, comment)),
 
   fetchDishes: () => dispatch(fetchDishes()),
 
@@ -31,11 +31,7 @@ const mapDispatchToProps = (dispatch) => ({
 
   fetchComments: () => dispatch(fetchComments()),
 
-  fetchPromos: () => dispatch(fetchPromos()),
-
-  postComment: (dishId, rating, author, comment) =>
-    dispatch(postComment(dishId, rating, author, comment))
-
+  fetchPromos: () => dispatch(fetchPromos())
 });
 
 class Main extends Component {

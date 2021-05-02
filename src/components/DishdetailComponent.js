@@ -31,13 +31,10 @@ function RenderDish({dish}){
 const CommentForm = (props) => {
 
     const [modal, setModal] = useState(false);
-    const toggle = (values) => {
-        setModal(!modal);
-    };
+    const toggle = () => setModal(!modal);
     const submit = (values) => {
-        props.postComment(props.dishId, values.rating, values.author, values.comment);
-        setModal(!modal);
-        
+        props.postComment(props.dishId, values.rating, values.name, values.comment);
+        toggle();
     }
     const required = (val) => val && val.length;
     const maxLength = (len) => (val) => !(val) || (val.length <= len);
