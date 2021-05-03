@@ -271,6 +271,15 @@
       "abbr": "EC",
       "featured": true,
       "description": "Award winning three-star Michelin chef with wide International experience having worked closely with whos-who in the culinary world, he specializes in creating mouthwatering Indo-Italian fusion experiences. He says, Put together the cuisines from the two craziest cultures, and you get a winning hit! Amma Mia!"
+    },
+    {
+      "id": 4,
+      "name": "Gregorio Michalopulos",
+      "image": "images/alberto.png",
+      "designation": "Super Saiyan Developer",
+      "abbr": "SSJ Dev",
+      "featured": true,
+      "description": "The one!"
     }
   ],
   "feedback": [
@@ -284,6 +293,80 @@
       "message": "afadsfds",
       "date": "2017-12-04T09:41:49.890Z",
       "id": 1
+    },
+    {
+      "date": "2021-05-03T04:45:00.043Z",
+      "id": 2
+    },
+    {
+      "date": "2021-05-03T04:46:27.087Z",
+      "id": 3
+    },
+    {
+      "firstname": "Gregorio",
+      "lastname": "Michalopulos",
+      "telnum": "123123",
+      "email": "gregomicha@gmail.com",
+      "agree": true,
+      "contactType": "Tel.",
+      "message": "123123123",
+      "date": "2021-05-03T04:48:55.659Z",
+      "id": 4
+    },
+    {
+      "firstname": "Gregorio",
+      "lastname": "Michalopulos",
+      "telnum": "12312312",
+      "email": "gregomicha@gmail.com",
+      "agree": true,
+      "contactType": "Tel.",
+      "message": "123123123123123123123",
+      "date": "2021-05-03T04:54:27.517Z",
+      "id": 5
+    },
+    {
+      "firstname": "Gregorio",
+      "lastname": "Michalopulos",
+      "telnum": "123123",
+      "email": "gregomicha@gmail.com",
+      "agree": true,
+      "contactType": "Tel.",
+      "message": "12312",
+      "date": "2021-05-03T04:56:33.760Z",
+      "id": 6
+    },
+    {
+      "firstname": "Gregorio",
+      "lastname": "Michalopulos",
+      "telnum": "12312312",
+      "email": "gregomicha@gmail.com",
+      "agree": true,
+      "contactType": "Tel.",
+      "message": "1231312312312312312",
+      "date": "2021-05-03T04:59:22.730Z",
+      "id": 7
+    },
+    {
+      "firstname": "Gregorio",
+      "lastname": "Michalopulos",
+      "telnum": "2123123",
+      "email": "gregomicha@gmail.com",
+      "agree": true,
+      "contactType": "Tel.",
+      "message": "13123123",
+      "date": "2021-05-03T05:00:29.850Z",
+      "id": 8
+    },
+    {
+      "firstname": "Gregorio",
+      "lastname": "Michalopulos",
+      "telnum": "123",
+      "email": "gregomicha@gmail.com",
+      "agree": false,
+      "contactType": "Tel.",
+      "message": "123",
+      "date": "2021-05-03T05:00:44.222Z",
+      "id": 9
     }
   ]
 }
